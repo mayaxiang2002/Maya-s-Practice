@@ -37,28 +37,31 @@ data_dir
 
 
 
-1. How days are in the data set?  You can assume each observation/row is a different day
+1. How many days are in the data set?  You can assume each observation/row is a different day
 ```{r q1}
-
+class(data_dir)
+nrow(circ)
 ```
 
 2. What is the total (sum) number boardings on the green bus?
 
 ```{r q2}
-
+databording <- circ %>% select(c(greenBoardings))
+sum(databording)
 ```
 
 3.  How many days are missing daily ridership?  Use `is.na` and either table, count?
    
 ```{r q3}
-
+sum(is.na(circ))
 ```
 
 
 4. Which day of the week has the most average ridership (using `daily`)?  How many days goes are observed for those days? Group the data.
 
 ```{r q4}
-
+numberdaily <- circ %>% select(`daily`)
+count(numberdaily)
 ```
 
 
@@ -67,7 +70,8 @@ data_dir
 		(b) graphically [hint: `qplot(, data = circ)`]
 		 describe the distribution of `orangeBoardings`
 ```{r q6}
-
+quantile(data = circ,orangeBoardings)
+qplot(data = circ,orangeBoardings)
 ```
 
 6. Then describe as above, after stratifying by day of the week.
