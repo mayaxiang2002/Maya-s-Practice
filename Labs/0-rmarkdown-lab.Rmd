@@ -1,7 +1,7 @@
 ---
 title: "R markdown lab"
 output: html_document
-editor_options: 
+editor_options: Maya
   chunk_output_type: console
 ---
 
@@ -37,6 +37,7 @@ plot(x)
 ```{r chunk3}
 x = rnorm(100)
 plot(x)
+fig.align="center"
 ```
 
 7. Add a chunk option of echo=FALSE and see what happens
@@ -44,11 +45,13 @@ plot(x)
 ```{r chunk4}
 x = rnorm(100)
 plot(x)
+echo=FALSE
 ```
 
 8. Uncomment this code and recompile the document. Then add a chunk command cache=TRUE and recompile. What files are created? Try compiling one more time. 
 
 ```{r longtime}
+cache = TRUE
 #Sys.sleep(10)
 ```
 
@@ -57,7 +60,7 @@ plot(x)
 10. Add the command devtools::session_info() to this chunk and look at the output
 
 ```{r session_info}
-
+sessionInfo()
 ```
 
 Clear the R environment of all variables and objects.
