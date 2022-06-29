@@ -1,7 +1,7 @@
 ---
 title: "Data Subsetting, Part 2 - Lab"
 output: html_document
-editor_options: 
+editor_options: Maya Xiang
   chunk_output_type: console
 ---
 
@@ -26,13 +26,13 @@ library(tidyverse)
 1. In the data set `mpg`, rename the column `year` to `YEAR` using `rename`.
 
 ```{r}
-
+rename(mpg,YEAR=year)
 ```
 
 2. Convert the column names of `mpg` to all upper case. Use `rename_all`, and the `toupper` command (or `colnames`).
 
 ```{r}
-
+mpg<-rename_all(mpg,toupper)
 ```
 
 
@@ -40,14 +40,15 @@ library(tidyverse)
 3. Re-order the rows of `mpg` by `CYL` in increasing order. Use `arrange()`
 
 ```{r}
-
+arrange(mpg,CYL)
 ```
 
 
 4. Create a new variable in `mpg` called `CTY2`, which  is equal to `CTY^2`, using `mutate()`.  Use piping `%>%`:
 
 ```{r}
-
+mpg<-mpg%>%mutate(CTY2 = CTY^2)
+mpg
 ```
 
 
@@ -55,5 +56,6 @@ library(tidyverse)
 `case_when` or `ifelse`, %in%, and `mutate`:
 
 ```{r}
-
+mpg %>% mutate (group_class = CLASS)
+    
 ```
