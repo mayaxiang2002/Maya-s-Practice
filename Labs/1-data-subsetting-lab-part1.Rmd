@@ -89,5 +89,5 @@ nrow(Car)
 9. Filter cars with displacements (`displ`) greater than 4 and that are All/4 wheel drive. How many cars/rows are there. 
 ```{r}
 wheel4 <- filter(mpg,displ>4)
-nrow(wheel4)
+number <- nrow(wheel4)
 ```
