@@ -24,41 +24,41 @@ library(here)
 2.  Create path variable for the iris data subdirectory using `here()`
 
 ```{r}
-here(iris)
+here("data/iris//")
 ```
 
 3.  Read in the `iris_q1.csv` dataset into the `iris_q1` R object. What delimiter separates columns?
 
 ```{r}
-iris_q1 <- read.csv(here("iris","iris_q1.csv"),header = TRUE)
+iris_q1 <- read.csv(here("data","iris","iris_q1.csv"),header = TRUE)
 ```
 
 4.  Read in the `iris_q2.tsv` dataset into the `iris_q2` R object. What delimiter separates columns?
 
 ```{r}
-iris_q2 <- read.csv("iris_q2.csv",header = TRUE)
+iris_q2 <- read_tsv(here("data","iris","iris_q2.tsv"))
 ```
 
 5.  Read in the `iris_q3.txt` dataset into the `iris_q3` R object. What delimiter separates columns?
 
 ```{r}
-iris_q3 <- read.csv("iris_q3.csv",header = TRUE)
+iris_q3 <- read.table(here("data","iris","iris_q3.txt"),header = TRUE)
 ```
 
 6.  Read in the `iris_q4.csv` dataset into the `iris_q4` R object. What delimiter separates columns? [hint: file extension is ambiguous]
 
 ```{r}
-iris_q4 <- read.csv("iris_q4.csv",header = TRUE)
+iris_q4 <- read.csv(here("data","iris","iris_q4.csv"),header = TRUE)
 ```
 
 7.  Read in the `iris_q5.csv` dataset into the `iris_q5` R object. Some entries are supposed to be missing, e.g. have the value `NA` in the data.
 
 ```{r}
-iris_q5 <- read.csv("iris_q5.csv",header = TRUE)
+iris_q5 <- read.csv(here("data","iris","iris_q5.csv"),header = TRUE)
 ```
 
 8.  Read in the `iris_q6.xlsx` dataset into the `iris_q6` R object. How many rows are in the dataset?
 
 ```{r}
-iris_q6 <- read.csv("iris_q6.csv",header = TRUE)
+iris_q6 <- read_xlsx(here("data","iris","iris_q6.xlsx"))
 ```
